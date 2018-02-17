@@ -51,8 +51,8 @@ Examples:
 
 ### Listing all persons : `list`
 Shows a list of all persons in the address book.<br>
-The entries in the address book are ordered according to name by alphabetical order
-Command functionality is case-insensitive
+The entries in the address book are ordered according to name by alphabetical order.
+Command functionality is case-insensitive. <br>
 Format: `list`
 
 ### Finding all persons containing any keyword in their name: `find`
