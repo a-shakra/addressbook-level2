@@ -96,8 +96,8 @@
   find
   # should only match full words in person names
   find bet
-  # does not match if none have keyword
-  find 23912039120
+  # Should match with entry that has this matching number
+  find 111111
   # matching should be case-sensitive
   find betsy
 

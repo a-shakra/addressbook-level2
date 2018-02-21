@@ -18,8 +18,10 @@ public class FindCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all persons whose names contain any of "
             + "the specified keywords (case-sensitive) and displays them as a list with index numbers.\n"
+            + "Or find all persons whose number consists of any of the specified keywords.\n"
             + "Parameters: KEYWORD [MORE_KEYWORDS]...\n"
-            + "Example: " + COMMAND_WORD + " alice bob charlie";
+            + "Example: " + COMMAND_WORD + " alice bob charlie"
+            + "Example: " + COMMAND_WORD + " 43123242 312432 431";
 
     private final Set<String> keywords;
 
@@ -42,7 +44,7 @@ public class FindCommand extends Command {
 
     /**
      * Retrieves all persons in the address book whose names contain some of the specified keywords.
-     *
+     * And/Or retrieves all persons in the address book whose phonenumbers contain some of the specified keywords.
      * @param keywords for searching
      * @return list of persons found
      */
@@ -50,11 +52,11 @@ public class FindCommand extends Command {
         final List<ReadOnlyPerson> matchedPersons = new ArrayList<>();
         for (ReadOnlyPerson person : addressBook.getAllPersons()) {
             final Set<String> wordsInName = new HashSet<>(person.getName().getWordsInName());
-            if (!Collections.disjoint(wordsInName, keywords)) {
+            final Set<String> phoneNumber = new HashSet<>(person.getPhone().getDigitsInNumber());
+            if (!Collections.disjoint(wordsInName, keywords) || !Collections.disjoint(phoneNumber,keywords)) {
                 matchedPersons.add(person);
             }
         }
         return matchedPersons;
     }
-
 }

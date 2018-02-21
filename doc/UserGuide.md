@@ -55,11 +55,11 @@ The entries in the address book are ordered according to name by alphabetical or
 Command functionality is case-insensitive. <br>
 Format: `list`
 
-### Finding all persons containing any keyword in their name: `find`
+### Finding all persons containing any keyword in their name or number: `find`
 Finds persons whose names contain any of the given keywords.<br>
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
-> The search is case sensitive, the order of the keywords does not matter, only the name is searched, 
+> The search is case sensitive (for names), the order of the keywords does not matter, the name and number is searched, 
 and persons matching at least one keyword will be returned (i.e. `OR` search).
 
 Examples: 
@@ -67,6 +67,8 @@ Examples:
   Returns `John Doe` but not `john`
 * `find Betsy Tim John`<br>
   Returns Any person having names `Betsy`, `Tim`, or `John`
+* `find 324221`<br>
+  Returns the entry corresponding to that number.
 
 ### Deleting a person : `delete`
 Deletes the specified person from the address book. Irreversible.<br>
