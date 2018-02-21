@@ -50,6 +50,8 @@
   list
   add Esther Potato p/555555 e/esther@not.a.real.potato pa/555, epsilon street t/tubers t/starchy
   list
+  add Chris Medan p/2131232 e/chris@whatever pa/444
+  list
 
   # should not allow adding duplicate persons
   add Esther Potato p/555555 e/esther@not.a.real.potato pa/555, epsilon street t/tubers t/starchy
